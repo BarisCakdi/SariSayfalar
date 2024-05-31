@@ -1,0 +1,25 @@
+﻿@model List<Urun>
+
+<form>
+    <div class="container px-4 text-center">
+        <div class="row gx-5">
+            @foreach (var urun in Model.OrderBy(p=>p.Tarih))
+            {
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="@urun.Img" alt="@urun.Ad" class="card-img-top img-fluid" style="max-width: 325px; height: 200px;" alt="...">
+                        <div class="card-body mb-2">
+                            <h5 class="card-title">@urun.Ad</h5>
+                            <p class="card-text">@urun.Fiyat.ToString("N") TL</p>
+                            <p class="card-text">@urun.Tarih.ToString("dd.MM.yyyy")</p>
+                            <div class="card-footer mt-2">
+                                <p><button name="Fiyat" class="btn btn-primary">Satın Al</button></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</form>
